@@ -35,3 +35,6 @@ UC4: Ability to edit existing contact person using their name
 
 UPDATE AddressBook SET Address='blr',PhoneNumber=9937314236 where FirstName='prajna';
 
+UC5: Ability to delete person using person's name
+
+DELETE FROM AddressBook WHERE FirstName='dinesh';

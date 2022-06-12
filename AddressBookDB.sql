@@ -30,3 +30,8 @@ INSERT INTO AddressBook VALUES ('sangram','behera','bbsr','bbsr','odisha',560037
 ('susant','behera','bdk','bdk','odisha',750112,'8765567754','susant@gmail.com');
 
 SELECT * FROM AddressBook;
+
+UC4: Ability to edit existing contact person using their name
+
+UPDATE AddressBook SET Address='blr',PhoneNumber=9937314236 where FirstName='prajna';
+

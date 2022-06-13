@@ -47,3 +47,22 @@ UC7: Ability to understand size of AddressBook by city and state
 
 SELECT COUNT(*) FROM AddressBook WHERE City='bdk' AND State='odisha';
 
+UC8: Ability to retrieve entries sorted alphabetically by person's name for a given city
+
+SELECT FirstName,City FROM AddressBook ORDER BY ID ASC;
+SELECT FirstName,City FROM AddressBook ORDER BY ID DESC;
+
+UC9: Ability to identify each address book with name and type
+
+ALTER TABLE AddressBook ADD FullName VARCHAR(100),TYPE VARCHAR(100);
+SELECT * FROM AddressBook
+UPDATE AddressBook SET Type='Experienced' WHERE FirstName='susant';
+UPDATE AddressBook SET Type='Fresher' WHERE FirstName='prajna';
+UPDATE AddressBook SET Type='Trainee' WHERE FirstName='rakesh';
+UPDATE AddressBook SET Type='Trainee' WHERE FirstName='sangram';
+
+UPDATE AddressBook SET FullName='Sangram keshari behera' WHERE FirstName='sangram';
+UPDATE AddressBook SET FullName='Susant Kumar behera' WHERE FirstName='susant';
+UPDATE AddressBook SET FullName='Prajan parimita Behera' WHERE FirstName='prajna';
+UPDATE AddressBook SET FullName='Rakesh kumar Behera' WHERE FirstName='rakesh';
+

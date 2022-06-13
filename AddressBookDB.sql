@@ -38,3 +38,12 @@ UPDATE AddressBook SET Address='blr',PhoneNumber=9937314236 where FirstName='pra
 UC5: Ability to delete person using person's name
 
 DELETE FROM AddressBook WHERE FirstName='dinesh';
+
+UC6: Ability to retrieve person belonging to city or state from the address book
+
+SELECT * FROM AddressBook WHERE City='bdk' OR State='odisha';
+
+UC7: Ability to understand size of AddressBook by city and state
+
+SELECT COUNT(*) FROM AddressBook WHERE City='bdk' AND State='odisha';
+

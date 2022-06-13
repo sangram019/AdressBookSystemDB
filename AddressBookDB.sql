@@ -66,3 +66,8 @@ UPDATE AddressBook SET FullName='Susant Kumar behera' WHERE FirstName='susant';
 UPDATE AddressBook SET FullName='Prajan parimita Behera' WHERE FirstName='prajna';
 UPDATE AddressBook SET FullName='Rakesh kumar Behera' WHERE FirstName='rakesh';
 
+UC10: Ability to get number of contact persons i.e. count by type
+
+SELECT COUNT (*) FROM AddressBook WHERE Type='Fresher';
+SELECT COUNT (*) FROM AddressBook WHERE Type='Trainee';
+

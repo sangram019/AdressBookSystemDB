@@ -71,3 +71,9 @@ UC10: Ability to get number of contact persons i.e. count by type
 SELECT COUNT (*) FROM AddressBook WHERE Type='Fresher';
 SELECT COUNT (*) FROM AddressBook WHERE Type='Trainee';
 
+UC11: Ability to add person to both Types;
+
+INSERT INTO AddressBook VALUES ('dinesh','behera','Ameerpet','Hydrabad','telengana',500015,'7008015327','dkbehera@gmail.com','Dinesh kumar Behera','Fresher'),
+('Omm','behera','Ameerpet','Hydrabad','telengana',501089,'9087656676','ommibehera@gmail.com','Omm Prakash Behera','Experienced');
+
+SELECT * FROM AddressBook;

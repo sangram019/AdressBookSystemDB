@@ -77,3 +77,76 @@ INSERT INTO AddressBook VALUES ('dinesh','behera','Ameerpet','Hydrabad','telenga
 ('Omm','behera','Ameerpet','Hydrabad','telengana',501089,'9087656676','ommibehera@gmail.com','Omm Prakash Behera','Experienced');
 
 SELECT * FROM AddressBook;
+
+UC12-Creating table using ER Diagram
+
+Create table Address_Book(AddressBookId Int Identity(1,1) Primary Key,
+						  AddressBookName varchar(100));
+select *from Address_Book;
+
+
+
+Create table PersonDetail(   PersonId Int Identity(1,1) Primary Key,
+							 AddressBookId Int Foreign Key References Address_Book(AddressBookId),
+							 FirstName varchar(50),
+							 LastName varchar(50),
+							 Address varchar(100),
+							 City varchar(50),
+							 State varchar(50),
+							 Zip int,
+							 PhoneNumber bigint,
+							 Email_ID varchar(50)    );
+select *from PersonDetail;
+
+
+
+CREATE table PersonTypes(	 PersonTypeId Int Identity(1,1) Primary Key,
+							 PersonType varchar(50), );
+select *from PersonTypes;
+
+
+
+CREATE table PersonsDetail_Type(PersonId Int Foreign Key References PersonDetail(PersonId),
+								PersonTypeId Int Foreign Key References PersonTypes(PersonTypeId),
+								EmployeeID Int Primary Key );
+select *from PersonsDetail_Type;
+
+
+
+CREATE table Employee_Department(PersonId Int Foreign Key References PersonDetail(PersonId),
+								EmployeeID Int  ,
+								DepartmentID int,);
+select *from Employee_Department;
+
+Inserting values into Address_Book table-----------------------
+
+INSERT INTO Address_Book(AddressBookName) Values('Home'),('School'),('College'),('Office');
+select *from Address_Book;
+
+Insert values in PersonDetail table--------------------
+
+Insert INTO PersonDetail VALUES(1,'Tanmay','Rout','bhubaneswar','khordha','Odisha',756137,8909876563,'Trout@gmail.com'),
+								(2,'Suraj','sahoo','ameerpet','Hydrabad','Telengana',500067,9876567890,'Ssahoo@gmail.com'),
+								(3,'Ritu','behera','pritpur','Amritsar','Punjab',640083,9089454322,'Rbehera@gamil.com'),
+								(4,'kunal','mohanty','mysore','pune','Maharashtra',410205,6454837373,'kmohanty@gmail.com');
+select *from PersonDetail;
+
+Inserting values into persontype table------------------
+
+INSERT INTO PersonTypes(PersonType) VALUES('Family'),('SchoolFriend'),('Friend'),('Profession');
+select *from PersonTypes;
+
+Insert values in Employee_Department table----------------------------
+
+
+INSERT INTO Employee_Department VALUES(1,123,818),(2,456,19112),(3,789,4512),(4,244,161815);
+select *from Employee_Department;
+
+Insert values in PersonsDetail_Type table-------------------
+
+
+INSERT INTO PersonsDetail_Type(PersonId,PersonTypeId,EmployeeID) VALUES(1,4,123),(2,3,456),(3,1,789),(4,2,244);
+select *from PersonsDetail_Type;
+
+
+
